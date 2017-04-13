@@ -75,7 +75,7 @@ export class Database {
             });
         });
     }
-    deleteContact(contactsToBeDeleted: ContactInfo[]) {
+     deleteContact(contactsToBeDeleted: ContactInfo[]) {
         return new Promise((resolve, reject) => {
             let query = "DELETE FROM CONTACTS WHERE ";
             for (var index = 0; index < contactsToBeDeleted.length; index++) {
@@ -97,6 +97,7 @@ export class Database {
             });
         });
     }
+
 
 }
 

@@ -13,9 +13,7 @@ export class Contacts {
     public lname: any;
     public contact: any;
     public contacts: ContactInfo[];
-   
-
-
+    public isDeleteVisible: boolean = false;
     //public contactint:any
     constructor(public database: Database) {
     }
@@ -42,10 +40,11 @@ export class Contacts {
             console.log("ERROR: ", error);
         });
     }
+
     deleteContact() {
         let contactsToBeDeleted = [];
         for (var index = 0; index < this.contacts.length; index++) {
-            if(this.contacts[index].checked){
+            if (this.contacts[index].checked) {
                 contactsToBeDeleted.push(this.contacts[index]);
             }
         }
@@ -56,7 +55,25 @@ export class Contacts {
             console.log("ERROR: ", error);
         });;
         this.readContact();
+        this.deleteVisible();
     }
 
+    deleteVisible() {
+        console.log("inside deleteVisible!");
+        let contactsChecked = [];
+        for (var index = 0; index < this.contacts.length; index++) {
+            if (this.contacts[index].checked) {
+                contactsChecked.push(this.contacts[index]);
+            }
+        }
+        console.log("selected contacts count: ", contactsChecked.length);
+        if (contactsChecked.length > 0) {
+            this.isDeleteVisible = true;
+        }
+        else {
+            this.isDeleteVisible = false;
+        }
+        console.log("delete: ", this.isDeleteVisible);
+    }
 }
 
