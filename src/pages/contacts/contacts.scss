@@ -1,10 +1,43 @@
 page-contacts{
-    .header {
-                right: 0px;
-                position: relative;
-                float: right;
-               
+     background-color: white;
+    .header { 
+               .delete{
+                   float: right;
+                   right: 12px;
+                   position: relative;
+               }
+               .contactsinfo{
+                  clear: both;
+                  border: 1px solid yellowgreen;
+                  margin-top:60px;
+                  margin-left:5px; 
+                  padding: 2px; 
+                //   .ion-row{
+                //       strong{
+                //         border: 1px solid yellowgreen;
+                //       }
+                //   } 
+                //   .ion-col{
+                //       border: 1px solid yellowgreen;
+                //   }           
+               }
+               .labels{
+                       display: inline;
+                       .phonenumber{
+                           width: 163px;
+                       }
+                       .firstname{
+                           width:163px;
+                       }
+                        .lastname{
+                           width: 163px;
+                       }
+            } 
+            .insertread{
+
             }
+
+    }
 }
 
 
