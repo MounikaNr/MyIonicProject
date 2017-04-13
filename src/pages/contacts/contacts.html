@@ -1,9 +1,10 @@
 <ion-header>
     <div class="delete">
         <button ion-button color="danger" icon-left>
-        <button (click)="deleteContact()">DELETE</button>
+        <button (click)="deleteContact()" >DELETE</button>
         </button>
     </div>
+
     <div class="contactsinfo">
         <ion-row>
             <ion-col>
@@ -35,33 +36,28 @@
                 <strong> {{contactsinfo.lastname}}</strong>
             </ion-col>
         </ion-row>
+
     </div>
-    <div class="labels">
-        <div class="phonenumber">
-            <ion-item>
-                <ion-label floating>Phone number</ion-label>
-                <ion-input name="contact" [(ngModel)]="contact" type="number"></ion-input>
-            </ion-item>
-        </div>
-        <div class="firstname">
-            <ion-item>
-                <ion-label floating>Firstname</ion-label>
-                <ion-input type="text" name="name" [(ngModel)]="name"></ion-input>
-            </ion-item>
-        </div>
-        <div class="lastname">
-            <ion-item>
-                <ion-label floating>Lastname</ion-label>
-                <ion-input type="text" name="lname" [(ngModel)]="lname"></ion-input>
-            </ion-item>
-        </div>
-    </div>
-    <div class="insertread">
-        <button ion-button color="secondary">
+
+    <ion-item>
+        <ion-label floating>Phone number</ion-label>
+        <ion-input name="contact" [(ngModel)]="contact" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Firstname</ion-label>
+        <ion-input type="text" name="name" [(ngModel)]="name"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Lastname</ion-label>
+        <ion-input type="text" name="lname" [(ngModel)]="lname"></ion-input>
+    </ion-item>
+
+
+    <button ion-button color="secondary">
       <button (click)="insertcontact()">ADD</button>
-        </button>
-        <button ion-button color="blue">
+    </button>
+    <button ion-button color="blue">
       <button (click)="readContact()">DISPLAY CONTACTS</button>
-        </button>
-    </div>
+    </button>
+
 </ion-header>

@@ -13,6 +13,7 @@ export class Contacts {
     public lname: any;
     public contact: any;
     public contacts: ContactInfo[];
+   
 
 
     //public contactint:any
