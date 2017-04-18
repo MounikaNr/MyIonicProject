@@ -1,60 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
 <ion-header>
     <div class="delete">
-        <button ion-button [hidden]="!isDeleteVisible">
-        <button (click)="deleteContact()">DELETE</button>
-        </button>
+        <button ion-button [hidden]="!isDeleteVisible" color="primary" (click)="deleteContact()">delete</button>
     </div>
-
-    <div class="contactsinfo">
-        <ion-row>
-            <ion-col>
-                <strong>CHECK</strong>
-            </ion-col>
-            <ion-col>
-                <strong>CONTACTNUMBER</strong>
-            </ion-col>
-            <ion-col>
-                <strong>FIRSTNAME</strong>
-            </ion-col>
-            <ion-col>
-                <strong>LASTNAME</strong>
-            </ion-col>
-        </ion-row>
+    <div class="ion-title">
+        <ion-title>Contactpage</ion-title>
     </div>
-    <div *ngFor="let contactsinfo of contacts">
-        <ion-row>
-            <ion-col>
-                <ion-checkbox [(ngModel)]="contactsinfo.checked" (ionChange)="deleteVisible()"></ion-checkbox>
-            </ion-col>
-            <ion-col>
-                <strong>{{contactsinfo.contactnumber}}</strong>
-            </ion-col>
-            <ion-col>
-                <strong>{{contactsinfo.firstname}}</strong>
-            </ion-col>
-            <ion-col>
-                <strong> {{contactsinfo.lastname}}</strong>
-            </ion-col>
-        </ion-row>
+    <title>Contact page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <div class="container-fluid">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>check</th>
+                    <th>number</th>
+                    <th>Firstname</th>
+                    <th>Lastname</th>      
+                </tr>
+            </thead>
+        </table>
+
+        <div class="overflow">
+            <div class="contactsinformation">
+                <div *ngFor="let contactsinfo of contacts">
+                    <ion-row>
+                        <ion-col>
+                            <ion-checkbox [(ngModel)]="contactsinfo.checked" (ionChange)="deleteVisible()"></ion-checkbox>
+                        </ion-col>
+                        <ion-col>
+                            <strong>{{contactsinfo.contactnumber}}</strong>
+                        </ion-col>
+                        <ion-col>
+                            <strong>{{contactsinfo.firstname}}</strong>
+                        </ion-col>
+                        <ion-col>
+                            <strong> {{contactsinfo.lastname}}</strong>
+                        </ion-col>
+                    </ion-row>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <ion-item>
-        <ion-label floating>Phone number</ion-label>
-        <ion-input name="contact" [(ngModel)]="contact" type="number"></ion-input>
-    </ion-item>
-    <ion-item>
-        <ion-label floating>Firstname</ion-label>
-        <ion-input type="text" name="name" [(ngModel)]="name"></ion-input>
-    </ion-item>
-    <ion-item>
-        <ion-label floating>Lastname</ion-label>
-        <ion-input type="text" name="lname" [(ngModel)]="lname"></ion-input>
-    </ion-item>
-    <button ion-button color="secondary">
-      <button (click)="insertcontact()">ADD</button>
-    </button>
-    <button ion-button color="blue">
-      <button (click)="readContact()">DISPLAY CONTACTS</button>
-    </button>
-
+    <div class="labels">
+        <ion-item>
+            <ion-label fixed class="phone">Phonenumber</ion-label>
+            <ion-input name="contact" [(ngModel)]="contact" type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label fixed class="first">Firstname</ion-label>
+            <ion-input type="text" name="name" [(ngModel)]="name"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label fixed class="last">Lastname</ion-label>
+            <ion-input type="text" name="lname" [(ngModel)]="lname"></ion-input>
+        </ion-item>
+    </div>
+    <div class="buttons">
+        <button ion-button color="primary" (click)="insertcontact()">add</button>
+        <button ion-button color="primary" (click)="readContact()">display contacts</button>
+    </div>
 </ion-header>
+
+</html>
