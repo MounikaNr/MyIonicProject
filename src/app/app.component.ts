@@ -4,6 +4,7 @@ import { Platform, MenuController, Nav } from 'ionic-angular';
 
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { Contacts } from '../pages/contacts/contacts';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
@@ -43,6 +44,7 @@ export class MyApp {
 
   initializeApp() {
     this.platform.ready().then(() => {
+      
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
